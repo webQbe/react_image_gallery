@@ -2,8 +2,9 @@ import React from 'react'
 
 const App = () => {
     return (
-        <div>
-            <h1 className="text-6xl">Hello World!</h1>
+        // Create Card to Display Image
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img src="https://picsum.photos/200/300" alt="" className="w-full" />
         </div>
     )
 }
