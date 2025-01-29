@@ -9,6 +9,20 @@ const App = () => {
                 <div className="font-bold text-purple-500 text-xl mb-2">
                     Photo by John Doe
                 </div>
+                <ul>
+                    <li>
+                        <strong>Views: </strong>
+                        4000
+                    </li>
+                    <li>
+                        <strong>Downloads: </strong>
+                        300
+                    </li>
+                    <li>
+                        <strong>Likes: </strong>
+                        400
+                    </li>
+                </ul>
             </div>
         </div>
     )
