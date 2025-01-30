@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
 const App = () => {
+    // Default State of images is empty
+    const [images, setImages] = useState([]);
+    // Default State of isLoading is true
+    const [isLoading, setIsLoading] = useState(true);
+    // Default State of term is ''
+    const [term, setTerm] = useState('');
+
+
+    useEffect(() => {
+        // Fetch Images from API
+        // Make API request with the Key stored in .env file
+        fetch(`https://pixabay.com/api/?key=${import.meta.env.VITE_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`) 
+            // Wait for fetch promise to resolve before converting response to json
+            .then(res => res.json())
+            // Wait for fetch promise to resolve before logging data
+            .then(data => console.log(data))
+            // Handle errors
+            .catch(err => console.log(err));
+    }, []);
+
+    /* The useEffect hook:
+        Runs only once when the component mounts (due to the empty dependency array []) */
+
+
     return (
         // Create Card to Display Image
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg">
             <img src="https://picsum.photos/200/300" alt="" className="w-full" />
             <div className="px-6 py-4">
                 <div className="font-bold text-purple-500 text-xl mb-2">
