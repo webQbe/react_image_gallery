@@ -24,15 +24,18 @@ const App = () => {
                 setIsLoading(false); // Set IsLoading state to false
             })
             .catch(err => console.log(err)); // Console log error
-    }, []);
+    }, [term]); 
 
     /* The useEffect hook:
-        Runs only once when the component mounts (due to the empty dependency array []) */
+        Added 'term' as a dependency for fetch() to be called again 
+        Whenver the 'term' changes fetch() will run again */
 
 
     return (
-        <div className="container mx-auto">
-            <ImageSearch />
+        // Pass ImageSearch searchText state to setTerm()
+        <div className="container mx-auto" >
+            <ImageSearch searchText={(text) => setTerm(text)} 
+                />   
             { isLoading ? 
                 // Show Loading text while fetching data
                 <h1 className="text-6xl text-center mx-auto">Loading...</h1> :
