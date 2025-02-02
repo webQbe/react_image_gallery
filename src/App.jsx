@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ImageCard from './components/ImageCard'
+import ImageCard from './components/ImageCard';
+import ImageSearch from './components/ImageSearch';
 
 const App = () => {
     // Default State of images is empty
@@ -31,6 +32,7 @@ const App = () => {
 
     return (
         <div className="container mx-auto">
+            <ImageSearch />
             { isLoading ? 
                 // Show Loading text while fetching data
                 <h1 className="text-6xl text-center mx-auto">Loading...</h1> :
