@@ -31,14 +31,18 @@ const App = () => {
 
     return (
         <div className="container mx-auto">
-            <div className="grid grid-cols-3 gap-4">
+            { isLoading ? 
+                // Show Loading text while fetching data
+                <h1 className="text-6xl text-center mx-auto">Loading...</h1> :
+                // Show Images when fetching is over
+                <div className="grid grid-cols-3 gap-4">
                 { // Loop through images array
                   images.map(image => (
                         // Pass current image & image.id as a key to create the list
                         <ImageCard key={image.id} image={image} />
                     ))
                 }
-            </div>
+            </div> }
         </div>   
     )
 }
