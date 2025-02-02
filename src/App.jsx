@@ -36,6 +36,10 @@ const App = () => {
         <div className="container mx-auto" >
             <ImageSearch searchText={(text) => setTerm(text)} 
                 />   
+    
+            {// Show 'No Images Found' if 'isLoading' is 'False' & No images fetched
+            !isLoading && images.length === 0 && <h1 className="text-5xl text-center mx-auto mt-32">No Images Found</h1> }
+
             { isLoading ? 
                 // Show Loading text while fetching data
                 <h1 className="text-6xl text-center mx-auto">Loading...</h1> :
