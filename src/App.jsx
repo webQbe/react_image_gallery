@@ -18,11 +18,11 @@ const App = () => {
             .then(res => res.json())
             // Wait for fetch promise to resolve before logging data
             .then(data => {
-                setImages(data.hits); // Set images array state to data.hits from response
+                console.log(data); // Console log response
+                setImages(data.hits); // Set images state to data.hits array from response
                 setIsLoading(false); // Set IsLoading state to false
             })
-            // Handle errors
-            .catch(err => console.log(err));
+            .catch(err => console.log(err)); // Console log error
     }, []);
 
     /* The useEffect hook:
@@ -30,7 +30,16 @@ const App = () => {
 
 
     return (
-        <ImageCard /> 
+        <div className="container mx-auto">
+            <div className="grid grid-cols-3 gap-4">
+                { // Loop through images array
+                  images.map(image => (
+                        // Pass current image & image.id as a key to create the list
+                        <ImageCard key={image.id} image={image} />
+                    ))
+                }
+            </div>
+        </div>   
     )
 }
 
