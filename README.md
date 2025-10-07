@@ -1,5 +1,5 @@
 # React Image Gallery
-
+This repo is an adaptation of [React & Tailwind CSS Image Gallery](https://www.youtube.com/watch?v=FiGmAI5e91M) by Brad Traversy. I followed the tutorial to learn followings:
 - Creating an image gallery using React and TailwindCSS
 - Fetching images from Pixabay API
 - Display cards with images along with username, views, downloads, likes, and tags
@@ -60,3 +60,9 @@
 
         export default App
         ```
+
+## Credits
+Original tutorial: [React & Tailwind CSS Image Gallery](https://www.youtube.com/watch?v=FiGmAI5e91M) — Brad Traversy.
+
+## License
+MIT License
